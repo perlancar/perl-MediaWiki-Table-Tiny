@@ -16,7 +16,7 @@ sub table {
 
     push @res, '{| class="wikitable" style="text-align:center" border="1"',
         "\n";
-    push @res, '{+', $args{caption}, "\n" if $args{caption};
+    push @res, '|+', $args{caption}, "\n" if $args{caption};
     push @res, '|-', "\n";
     my $i = 0;
     for my $row (@$rows) {
