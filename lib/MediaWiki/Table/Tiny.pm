@@ -10,12 +10,13 @@ use warnings;
 sub table {
     my %args = @_;
 
-    my $rows = $args{rows};
-
+    my $rows   = $args{rows};
+    my $class  = $args{class} // "wikitable";
+    my $style  = $args{style} // "text-align:center";
+    my $border = ($args{border} // 1) ? 1 : 0;
     my @res;
 
-    push @res, '{| class="wikitable" style="text-align:center" border="1"',
-        "\n";
+    push @res, '{| class="$class" style="$style" border="$border"', "\n";
     push @res, '|+', $args{caption}, "\n" if $args{caption};
     push @res, '|-', "\n";
     my $i = 0;
@@ -47,7 +48,13 @@ sub table {
      ['bob',   'cpl', '98765321'],
      ['carol', 'brig gen', '8745'],
  ];
- print MediaWiki::Table::Tiny::table(rows => $rows);
+ print MediaWiki::Table::Tiny::table(
+     rows     => $rows,
+     #caption => "foo", # optional, default is none. if set will add "|+foo" row
+     #class   => "wikitable", # optional
+     #style   => "text-align:center", # optional
+     #border  => 1, # optional
+ );
 
 Result:
 
@@ -81,5 +88,11 @@ Generate table in MediaWiki format. Arguments (C<*> marks required argument):
 =item * rows* => aoa
 
 =item * caption => str
+
+=item * style => str
+
+=item * class => str
+
+=item * border => bool
 
 =back
