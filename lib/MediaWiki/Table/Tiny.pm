@@ -16,7 +16,7 @@ sub table {
     my $border = ($args{border} // 1) ? 1 : 0;
     my @res;
 
-    push @res, '{| class="$class" style="$style" border="$border"', "\n";
+    push @res, "{| class=\"$class\" style=\"$style\" border=\"$border\"", "\n";
     push @res, '|+', $args{caption}, "\n" if $args{caption};
     push @res, '|-', "\n";
     my $i = 0;
