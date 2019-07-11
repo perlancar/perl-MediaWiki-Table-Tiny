@@ -1,13 +1,13 @@
-0.021   2018-07-15 (PERLANCAR)
+0.021   2018-07-15  Released-By: PERLANCAR
 
         - Fix string quoting style (thanks Richlv) [GH#2] [RT#122917].
 
 
-0.020   2017-09-03 (PERLANCAR)
+0.020   2017-09-03  Released-By: PERLANCAR
 
 	- Allow customizing style, class, border [RT#122917].
 
 
-0.01     2015-06-18 (PERLANCAR)
+0.01     2015-06-18  Released-By: PERLANCAR
 
          - First release.
